@@ -15,7 +15,7 @@ for file in glob.glob("*/tox.ini"):
     with open(file) as f:
         for line in f.readlines():
             if line.startswith("ignore"):
-                ignore = line.strip().split('=')[1].split(',')
+                ignore = line.split('=')[1].strip().split(',')
                 for rule in ignore:
                     if "H" not in rule:
                         # We only care about hacking rules
